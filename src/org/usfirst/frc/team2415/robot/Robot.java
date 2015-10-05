@@ -33,15 +33,16 @@ public class Robot extends SampleRobot {
     
     
     /*	Write your code here. There are three commands:
-     * 	driveSystem.left(time)    	:turns the robot left for a certain amount of time
-     *  driveSystem.right(time)		:turns the robot right for a certain amount of time
-     *  driveSystem.straight(time)	:drives the robot forwards for a certain amount of time
+     * 	driveSystem.left(ticks)    	:turns the robot left for a certain amount of ticks
+     *  driveSystem.right(ticks)		:turns the robot right for a certain amount of ticks
+     *  driveSystem.straight(ticks)	:drives the robot forwards for a certain amount of ticks
+     *  driveSystem.delay(time)
      *  
      *  Example:
      *  
-	 *  driveSystem.straigt(0.5)
+	 *  driveSystem.straight(200)
 	 *  
-	 *  <<drives the robot for 0.5 seconds>>
+	 *  <<drives the robot for 200 ticks>>
      * */
     public void autonomous() {
     	//MAKE ME DO STUFF :D!!!!!

@@ -15,27 +15,42 @@ public class DriveSystem {
 		rightE = new Encoder(rightEncoder[0], rightEncoder[1]);
 	}
 	
-	public void straight(float time){
-		long startTime = System.currentTimeMillis();
-		while((System.currentTimeMillis() - startTime)/1000.0 < time){
+	public void straight(int ticks){
+		int start = getTicks();
+		while(getTicks() - start < ticks){
 			left.set(0.5);
 			right.set(-0.5);
 		}
+		left.set(0);
+		right.set(0);
 	}
 	
-	public void left(float time){
-		long startTime = System.currentTimeMillis();
-		while((System.currentTimeMillis() - startTime)/1000.0 < time){
+	public void left(int ticks){
+		int start = getTicks();
+		while(getTicks() - start < ticks){
 			left.set(-0.5);
 			right.set(-0.5);
 		}
+		left.set(0);
+		right.set(0);
 	}
 	
-	public void right(float time){
-		long startTime = System.currentTimeMillis();
-		while((System.currentTimeMillis() - startTime)/1000.0 < time){
+	public void right(int ticks){
+		int start = getTicks();
+		while(getTicks() - start < ticks){
 			left.set(0.5);
 			right.set(0.5);
 		}
+		left.set(0);
+		right.set(0);
+	}
+	
+	public int getTicks(){
+		return (Math.abs(leftE.get()) + Math.abs(rightE.get()))/2;
+	}
+	
+	public void delay(double time){
+		long start = System.currentTimeMillis();
+		while((System.currentTimeMillis() - start)/1000.0 < time);
 	}
 }
