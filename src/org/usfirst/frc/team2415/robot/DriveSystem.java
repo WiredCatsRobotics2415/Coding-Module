@@ -16,28 +16,20 @@ public class DriveSystem {
 	}
 	
 	public void straight(int ticks){
-		int start = getTicks();
-		while(getTicks() - start < ticks){
-			left.set(0.5);
-			right.set(-0.5);
+		int startL = leftE.get();
+		int startR = rightE.get();
+		while((Math.abs(leftE.get() - startL) + Math.abs(rightE.get() - startR))/2 < ticks){
+			left.set(-0.5);
+			right.set(0.5);
 		}
 		left.set(0);
 		right.set(0);
 	}
 	
 	public void left(int ticks){
-		int start = getTicks();
-		while(getTicks() - start < ticks){
-			left.set(-0.5);
-			right.set(-0.5);
-		}
-		left.set(0);
-		right.set(0);
-	}
-	
-	public void right(int ticks){
-		int start = getTicks();
-		while(getTicks() - start < ticks){
+		int startL = leftE.get();
+		int startR = rightE.get();
+		while((Math.abs(leftE.get() - startL) + Math.abs(rightE.get() - startR))/2 < ticks){
 			left.set(0.5);
 			right.set(0.5);
 		}
@@ -45,8 +37,15 @@ public class DriveSystem {
 		right.set(0);
 	}
 	
-	public int getTicks(){
-		return (Math.abs(leftE.get()) + Math.abs(rightE.get()))/2;
+	public void right(int ticks){
+		int startL = leftE.get();
+		int startR = rightE.get();
+		while((Math.abs(leftE.get() - startL) + Math.abs(rightE.get() - startR))/2 < ticks){
+			left.set(-0.5);
+			right.set(-0.5);
+		}
+		left.set(0);
+		right.set(0);
 	}
 	
 	public void delay(double time){

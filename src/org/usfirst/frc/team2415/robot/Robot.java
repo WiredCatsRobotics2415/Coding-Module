@@ -47,7 +47,12 @@ public class Robot extends SampleRobot {
     public void autonomous() {
     	//MAKE ME DO STUFF :D!!!!!
     	
-    	
+    	driveSystem.straight(100);
+    	driveSystem.delay(3);
+    	driveSystem.left(100);
+    	driveSystem.delay(3);
+    	driveSystem.right(100);
+    	driveSystem.delay(3);
     	
     }
     
