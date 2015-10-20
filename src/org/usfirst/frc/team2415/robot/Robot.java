@@ -1,11 +1,9 @@
 
-package org.usfirst.frc.team2415.robot;
+package org
+.usfirst.frc.team2415.robot;
 
 
 import edu.wpi.first.wpilibj.SampleRobot;
-import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.Timer;
 
 /**
  * This is a demo program showing the use of the RobotDrive class.
@@ -31,29 +29,8 @@ public class Robot extends SampleRobot {
     	driveSystem = new DriveSystem(Ports.LEFT_MOTORS, Ports.RIGHT_MOTORS, Ports.LEFT_ENCODERS, Ports.RIGHT_ENCODERS);
     }
     
-    
-    /*	Write your code here. There are three commands:
-     * 	driveSystem.left(ticks)    	:turns the robot left for a certain amount of ticks
-     *  driveSystem.right(ticks)		:turns the robot right for a certain amount of ticks
-     *  driveSystem.straight(ticks)	:drives the robot forwards for a certain amount of ticks
-     *  driveSystem.delay(time)
-     *  
-     *  Example:
-     *  
-	 *  driveSystem.straight(200)
-	 *  
-	 *  <<drives the robot for 200 ticks>>
-     * */
     public void autonomous() {
-    	//MAKE ME DO STUFF :D!!!!!
-    	
-    	driveSystem.straight(100);
-    	driveSystem.delay(3);
-    	driveSystem.left(100);
-    	driveSystem.delay(3);
-    	driveSystem.right(100);
-    	driveSystem.delay(3);
-    	
+    	//Create your loop here
     }
     
     public void operatorControl() {
