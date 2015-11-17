@@ -35,14 +35,32 @@ public class Robot extends SampleRobot {
     
     public void autonomous() {}
     
+    /*
+    left.set (0.5);
+	right.set (0.5);
+			
+	gamepad.leftX();
+	gamepad.leftY();
+	gamepad.rightX();
+	gamepad.rightY();
+	*/
     public void operatorControl() {
     	//Write code here
+    	while(true){
+    		updateLeft();
+    		updateRight();
+    		
+    	}
     	
+    
     }
     
     public void updateLeft(){
     	/*This function will update the left motor according the the driver's input
     	 * on the controller.*/
+    	
+    	double joyInput = gamepad.leftX();
+    	left.set(joyInput);
     	
     }
     
@@ -50,6 +68,8 @@ public class Robot extends SampleRobot {
     	/*This function will update the right motor according the the driver's input
     	 * on the controller.*/
     	
+    	double joyInput = gamepad.rightX();
+    	right.set(-joyInput);
     }
     
     public void test() {
