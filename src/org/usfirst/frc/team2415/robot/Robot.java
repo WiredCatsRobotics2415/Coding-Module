@@ -49,8 +49,8 @@ public class Robot extends SampleRobot {
     	/*This function will update the left motor according the the driver's input
     	 * on the controller.*/
     	double y = gamepad.leftY();
-    	double x = gamepad.rightX();
-    	double speed = y + x;
+    	double x = gamepad.leftX();
+    	double speed = y - x;
     	left.set(speed);
     }
     
@@ -58,8 +58,8 @@ public class Robot extends SampleRobot {
     	/*This function will update the right motor according the the driver's input
     	 * on the controller.*/
     	double y = gamepad.leftY();
-    	double x = gamepad.rightX();
-    	double speed = y - x;
+    	double x = gamepad.leftX();
+    	double speed = y + x;
     	right.set(-speed);
     	
     }
