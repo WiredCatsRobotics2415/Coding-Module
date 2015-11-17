@@ -1,7 +1,6 @@
 
-package org
-.usfirst.frc.team2415.robot;
-
+package org.usfirst.frc.team2415.robot;
+import edu.wpi.first.wpilibj.Talon;
 
 import edu.wpi.first.wpilibj.SampleRobot;
 
@@ -23,17 +22,34 @@ import edu.wpi.first.wpilibj.SampleRobot;
  */
 public class Robot extends SampleRobot {
 	
-	DriveSystem driveSystem;
+	Talon left, right;
+	
+	WiredCatGamepad gamepad;
 	
     public Robot() {
-    	driveSystem = new DriveSystem(Ports.LEFT_MOTORS, Ports.RIGHT_MOTORS, Ports.LEFT_ENCODERS, Ports.RIGHT_ENCODERS);
+    	left = new Talon(0);
+    	right = new Talon(9);
+    	
+    	gamepad = new WiredCatGamepad(0);
     }
     
-    public void autonomous() {
-    	//Create your loop here
-    }
+    public void autonomous() {}
     
     public void operatorControl() {
+    	//Write code here
+    	
+    }
+    
+    public void updateLeft(){
+    	/*This function will update the left motor according the the driver's input
+    	 * on the controller.*/
+    	
+    }
+    
+    public void updateRight(){
+    	/*This function will update the right motor according the the driver's input
+    	 * on the controller.*/
+    	
     }
     
     public void test() {
