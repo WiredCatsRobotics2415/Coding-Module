@@ -37,19 +37,22 @@ public class Robot extends SampleRobot {
     
     public void operatorControl() {
     	//Write code here
-    	
+
+
     }
     
     public void updateLeft(){
     	/*This function will update the left motor according the the driver's input
     	 * on the controller.*/
-    	
-    }
+    	left.set(-gamepad.leftY());
+
+    	}
+    
     
     public void updateRight(){
     	/*This function will update the right motor according the the driver's input
     	 * on the controller.*/
-    	
+    	right.set(-gamepad.rightY());
     }
     
     public void test() {
